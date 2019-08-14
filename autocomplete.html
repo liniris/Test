@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autocomplete</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var name = ['橘貓', '梨花貓', '奶牛貓', '黑貓', '白貓', '三花貓', '暹羅貓', '布偶貓',
+                '折耳貓', '英國短毛貓', '美國短毛貓', '波斯貓', '俄羅斯藍貓', '異國短毛貓', '挪威森林貓', '孟買貓',
+                '緬因貓', '埃及貓', '伯曼貓', '美國短尾貓', '日本短尾貓'];
+            $(".name").autocomplete({
+                source: name,
+                minLength: 0
+            }
+            );
+        });
+
+        // 取值
+        function catData() {
+            var catName = document.getElementById("name").value;
+            var catAge = document.getElementById("age").value;
+            var catVariety = document.getElementById("variety").value;
+
+            alert("貓咪名是： " + catName + "\n年齡是： " + catAge +  " 歲 \n品種是： "+ catVariety);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Microsoft JhengHei;
+        }
+
+        ul.ui-autocomplete {
+            z-index: 9999;
+            max-height: 200px;
+            overflow-y: scroll;
+            font-size: 15px;
+        }
+
+        li.ui-menu-item {
+            font-family: Microsoft JhengHei;
+        }
+
+        .backgroundImg {
+            margin: 0px;
+            padding: 0px;
+            background-image: url(https://images.unsplash.com/photo-1534135954997-e58fbd6dbbfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .btn {
+            margin-top: 2%;
+            border: 1px solid black;
+            background-color: rgba(240, 248, 255, 0);
+            font-size: 15px;
+            padding: 5px 8px;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 576px) {}
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {}
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {}
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {}
+    </style>
+</head>
+
+<body class="backgroundImg">
+    
+        <div class="container-fluid">
+            <div class="form-group"
+                style="margin: 10%;padding: 5%;max-width: 600px;;background-color: rgba(255, 255, 255, 0.3)">
+                <table>
+                    <tr>
+
+                        <td>
+                            <label for="exampleFormControlInput1">貓咪名稱</label>
+                            <input type="textbox" class="form-control " name="name" id="name" style="max-width:200px">
+                        </td>
+                        <td rowspan="3" style="background-color: rgba(255, 192, 203, 0);text-align: center;width:300px">
+
+                            <img src="img/bago.jpg" height="15%" style="margin: 2%">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="exampleFormControlInput1">貓咪年齡</label>
+                            <input type="textbox" class="form-control " id="age" style="max-width:200px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="exampleFormControlInput1">貓咪品種</label>
+                            <input type="textbox" class="form-control name " id="variety" placeholder="輸入貓咪品種"
+                                style="max-width:200px">
+                        </td>
+
+                    </tr>
+                </table>
+                <input type="submit" value="送出" class="btn" onclick='catData();'>
+            </div>
+        </div>
+    
+</body>
+
+</html>
