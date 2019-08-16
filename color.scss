@@ -1,11 +1,82 @@
-$color1 : rgb(218, 94, 115);
-$color2 : rgb(236, 175, 95);
-$color3 : rgb(19, 163, 108);
-$color4 : rgb(62, 139, 211);
-$color5 : #b1aeae;
-$color6 : #000000;
+@import "reset";
 
-.c1{
-    color: $color1;
-    background-color: $color5;
+$color1: rgb(218, 94, 115);
+$color2: rgb(236, 175, 95);
+$color3: rgb(19, 163, 108);
+$color4: rgb(62, 139, 211);
+$color5: #b1aeae;
+$color6: #000000;
+$fontsize: 16px;
+$width: 200px;
+
+.c1 {
+  color: $color1;
+  background-color: $color5;
+}
+body {
+  font-size: $fontsize;
+}
+.d1 {
+  width: $width;
+}
+.d2 {
+  $color4: pink !global;
+  background-color: $color4;
+}
+
+nav {
+  ul {
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 5px 20px;
+    text-decoration: $color4;
+  }
+}
+
+@mixin style {
+  color: $color6;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid salmon;
+}
+.d3 {
+  @include style;
+}
+
+@mixin bordered($color, $width) {
+  border: $width solid $color;
+}
+
+@mixin distance($top, $right) {
+  margin: $top $right;
+  padding: 2px;
+}
+.d4 {
+  @include bordered(green, 2px);
+  @include distance(10px, 5px);
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.d5 {
+  @include transform(rotate(2deg));
+  margin-top: 30px;
+}
+
+.btn-basic{
+    padding: 5px 10px;
+    background-color: peachpuff;
+    rotate: 5px;
+    border: 1px solid peru;
 }
