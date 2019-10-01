@@ -1,4 +1,5 @@
 @import "reset";
+// 引入reset檔
 
 $color1: rgb(218, 94, 115);
 $color2: rgb(236, 175, 95);
@@ -23,7 +24,7 @@ body {
   $color4: pink !global;
   background-color: $color4;
 }
-
+//nav style
 nav {
   ul {
     margin: 0px;
@@ -39,7 +40,7 @@ nav {
     text-decoration: $color4;
   }
 }
-
+//@mixin 創建可重複使用的css code
 @mixin style {
   color: $color6;
   font-size: 20px;
@@ -47,9 +48,10 @@ nav {
   border: 1px solid salmon;
 }
 .d3 {
-  @include style;
+  @include style;//@include 使用創建的css code
 }
 
+//兩個參數定義 mixin
 @mixin bordered($color, $width) {
   border: $width solid $color;
 }
@@ -59,7 +61,7 @@ nav {
   padding: 2px;
 }
 .d4 {
-  @include bordered(green, 2px);
+  @include bordered(green, 2px);//Call mixin with two values
   @include distance(10px, 5px);
 }
 
