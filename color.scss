@@ -1,5 +1,5 @@
-@import "reset";
-// 引入reset檔
+@charset "utf-8";
+@import "reset";//引入reset檔
 
 $color1: rgb(218, 94, 115);
 $color2: rgb(236, 175, 95);
@@ -9,6 +9,11 @@ $color5: #b1aeae;
 $color6: #000000;
 $fontsize: 16px;
 $width: 200px;
+
+span {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
 
 .c1 {
   color: $color1;
@@ -21,7 +26,7 @@ body {
   width: $width;
 }
 .d2 {
-  $color4: pink !global;
+  $color4: pink !global; //change $color4
   background-color: $color4;
 }
 //nav style
@@ -40,7 +45,8 @@ nav {
     text-decoration: $color4;
   }
 }
-//@mixin 創建可重複使用的css code
+
+//創建可重複使用的css code
 @mixin style {
   color: $color6;
   font-size: 20px;
@@ -48,7 +54,7 @@ nav {
   border: 1px solid salmon;
 }
 .d3 {
-  @include style;//@include 使用創建的css code
+  @include style; //include 使用創建的css code
 }
 
 //兩個參數定義 mixin
@@ -61,7 +67,7 @@ nav {
   padding: 2px;
 }
 .d4 {
-  @include bordered(green, 2px);//Call mixin with two values
+  @include bordered(green, 2px); //Call mixin with two values
   @include distance(10px, 5px);
 }
 
@@ -75,10 +81,22 @@ nav {
   @include transform(rotate(2deg));
   margin-top: 30px;
 }
+//btn style
+.button {
+  padding: 5px 10px;
+  background-color: peachpuff;
+  rotate: 5px;
+  border: 1px solid peru;
+}
+.button:hover  {
+  @extend .button;
+  background-color: rgb(133, 53, 1);
+  cursor: pointer;
+  color: white;
+}
 
-.btn-basic{
-    padding: 5px 10px;
-    background-color: peachpuff;
-    rotate: 5px;
-    border: 1px solid peru;
+.button-submit  {
+  @extend .button;
+  background-color: green;
+  color: white;
 }

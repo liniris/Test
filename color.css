@@ -1,64 +1,64 @@
 h3 {
-  color: #6a3475;
-}
+  color: #6a3475; }
+
+span {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace; }
 
 .c1 {
   color: #da5e73;
-  background-color: #b1aeae;
-}
+  background-color: #b1aeae; }
 
 body {
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 .d1 {
-  width: 200px;
-}
+  width: 200px; }
 
 .d2 {
-  background-color: pink;
-}
+  background-color: pink; }
 
 nav ul {
   margin: 0px;
   padding: 0;
-  list-style: none;
-}
-
+  list-style: none; }
 nav li {
-  display: inline-block;
-}
-
+  display: inline-block; }
 nav a {
   display: block;
   padding: 5px 20px;
-  -webkit-text-decoration: pink;
-          text-decoration: pink;
-}
+  text-decoration: pink; }
 
 .d3 {
   color: #000000;
   font-size: 20px;
   font-weight: bold;
-  border: 1px solid salmon;
-}
+  border: 1px solid salmon; }
 
 .d4 {
   border: 2px solid green;
   margin: 10px 5px;
-  padding: 2px;
-}
+  padding: 2px; }
 
 .d5 {
   -webkit-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
   transform: rotate(2deg);
-  margin-top: 30px;
-}
+  margin-top: 30px; }
 
-.btn-basic {
+.button, .button:hover, .button-submit {
   padding: 5px 10px;
   background-color: peachpuff;
   rotate: 5px;
-  border: 1px solid peru;
-}
+  border: 1px solid peru; }
+
+.button:hover, .button-submit:hover {
+  background-color: #853501;
+  cursor: pointer;
+  color: white; }
+
+.button-submit {
+  background-color: rgb(223, 97, 170);
+  color: white; }
+
 /*# sourceMappingURL=color.css.map */
